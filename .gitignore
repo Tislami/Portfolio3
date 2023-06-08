@@ -1,0 +1,23 @@
+# Ignore node_modules/ klasörü
+node_modules/
+
+# Ignore derlenmiş dosyalar veya ara dosyalar
+*.min.css
+*.min.js
+*.map
+
+# Ignore proje yapılandırma dosyaları
+.idea/
+.vscode/
+
+# Ignore geçici dosyalar
+*.tmp
+*.bak
+
+# Ignore çalışma dosyaları veya test verileri
+*.log
+test/
+
+# Ignore derlenmiş veya sıkıştırılmış dosyalar
+dist/
+build/

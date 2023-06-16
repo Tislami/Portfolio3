@@ -40,6 +40,10 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* ====== Header ====== */
 
 aside {
@@ -58,10 +62,11 @@ aside {
     border-radius: var(--brd-radius);
     margin: 32px;
     background-color: var(--panel-color);
+    transition: var(--tran-05);
 }
 
 .seperator {
-    background-color: var(--surface-color);
+    background-color: var(--primary-color);
     height: 2px;
     width: 200px;
     margin: 16px auto;
@@ -123,16 +128,27 @@ aside {
 .info-items {
     display: flex;
     flex-direction: column;
-    padding-left: 16px;
     gap: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .info-items li {
+    padding-left: 8px;
     display: flex;
     justify-content: start;
     align-items: center;
     gap: 16px;
+    cursor: pointer;
+    transition: var(--tran-05);
 }
+
+.info-items li:hover {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 4px 6px;
+}
+
 
 .info-icon {
     background-color: var(--surface-color);
@@ -145,6 +161,7 @@ aside {
 .info-icon i {
     font-size: 20px;
     margin: 8px;
+    color: var(--primary-color);
 }
 
 .info-title {
@@ -157,6 +174,8 @@ aside {
     color: white;
     font-size: 12px;
 }
+
+
 
 .profile-info address {
     font-style: normal;
@@ -175,9 +194,17 @@ aside {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    transition: var(--tran-05);
+    cursor: pointer;
 }
 
-.info-socials li i {
+.info-socials li:hover {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.info-socials li a i {
     font-size: 20px;
     margin: 8px;
 }
@@ -192,12 +219,34 @@ aside {
     color: var(--text-color);
     text-decoration: none;
     border-radius: 50px;
+    transition: var(--tran-05);
 }
+
+.cv-btn:hover {
+    background-color: var(--primary-color);
+    padding: 14px;
+    font-size: 1.1rem;
+}
+
+
+
+@media (max-width:1000px) {
+
+    aside {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
 
 
 main {
     width: 100%;
-
     border-radius: var(--brd-radius);
     background-color: var(--panel-color);
     margin-top: 32px;

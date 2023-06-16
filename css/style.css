@@ -1,87 +1,207 @@
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
 :root {
+    /* ====== Colors ====== */
+    --primary-color: hsl(45, 54%, 58%);
+    --bg-color: hsl(0, 0%, 7%);
+    --surface-color: hsl(0, 0%, 30%);
+    --panel-color: hsl(0, 0%, 22%);
+    --text-color: #ffffff;
+    --outline-color: hsl(45, 100%, 72%);
+    --border-color: #e6e5e5;
 
-    /**
-     * colors
-     */
+    /* ====== Transition ====== */
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
 
-    /* gradient */
+    /* ====== borders ====== */
+    --brd1-: 1px solid red;
+    --brd2-: 1px solid blue;
+    --brd3-: 1px solid green;
 
-    --bg-gradient-onyx: linear-gradient(to bottom right,
-            hsl(240, 1%, 25%) 3%,
-            hsl(0, 0%, 19%) 97%);
-    --bg-gradient-jet: linear-gradient(to bottom right,
-            hsla(240, 1%, 18%, 0.251) 0%,
-            hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
-    --bg-gradient-yellow-1: linear-gradient(to bottom right,
-            hsl(45, 100%, 71%) 0%,
-            hsla(36, 100%, 69%, 0) 50%);
-    --bg-gradient-yellow-2: linear-gradient(135deg,
-            hsla(45, 100%, 71%, 0.251) 0%,
-            hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
-    --border-gradient-onyx: linear-gradient(to bottom right,
-            hsl(0, 0%, 25%) 0%,
-            hsla(0, 0%, 25%, 0) 50%);
-    --text-gradient-yellow: linear-gradient(to right,
-            hsl(45, 100%, 72%),
-            hsl(35, 100%, 68%));
+    --brd-radius: 25px;
+}
 
-    /* solid */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
 
-    --jet: hsl(0, 0%, 22%);
-    --onyx: hsl(240, 1%, 17%);
-    --eerie-black-1: hsl(240, 2%, 13%);
-    --eerie-black-2: hsl(240, 2%, 12%);
-    --smoky-black: hsl(0, 0%, 7%);
-    --white-1: hsl(0, 0%, 100%);
-    --white-2: hsl(0, 0%, 98%);
-    --orange-yellow-crayola: hsl(45, 100%, 72%);
-    --vegas-gold: hsl(45, 54%, 58%);
-    --light-gray: hsl(0, 0%, 84%);
-    --light-gray-70: hsla(0, 0%, 84%, 0.7);
-    --bittersweet-shimmer: hsl(0, 43%, 51%);
+}
 
-    /**
-     * typography
-     */
+ul {
+    list-style: none;
+}
 
-    /* font-family */
-    --ff-poppins: 'Poppins', sans-serif;
+/* ====== Header ====== */
 
-    /* font-size */
-    --fs-1: 24px;
-    --fs-2: 18px;
-    --fs-3: 17px;
-    --fs-4: 16px;
-    --fs-5: 15px;
-    --fs-6: 14px;
-    --fs-7: 13px;
-    --fs-8: 11px;
+aside {
+    height: 100vh;
+    min-height: 900px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    /* font-weight */
-    --fw-300: 300;
-    --fw-400: 400;
-    --fw-500: 500;
-    --fw-600: 600;
+/* ====== Profile ====== */
 
-    /**
-     * shadow
-     */
+.profile {
+    width: 250px;
+    border-radius: var(--brd-radius);
+    margin: 32px;
+    background-color: var(--panel-color);
+}
 
-    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-    --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-    --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+.seperator {
+    background-color: var(--surface-color);
+    height: 2px;
+    width: 200px;
+    margin: 16px auto;
+    border-radius: 24px;
+}
 
-    /**
-     * transition
-     */
+/* ====== Top ====== */
 
-    --transition-1: 0.25s ease;
-    --transition-2: 0.5s ease-in-out;
+.profile-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.profile-top figure {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--surface-color);
+}
+
+.profile-top figure img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.profile-top h1 {
+    font-size: 2rem;
+    flex-wrap: nowrap;
+}
+
+
+.profile-title {
+    background-color: var(--surface-color);
+    padding: 2px 12px;
+    border-radius: 8px;
+}
+
+.profile-title p {
+    font-size: .8rem;
+}
+
+
+/* ====== Info ====== */
+
+.profile-info {
+    width: 100%;
+    padding-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    gap: 20px;
+}
+
+.info-items li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-icon {
+    background-color: var(--surface-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.info-icon i {
+    font-size: 20px;
+    margin: 8px;
+}
+
+.info-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.profile-info :is(.info-link, a, time, address) {
+    color: white;
+    font-size: 12px;
+}
+
+.profile-info address {
+    font-style: normal;
+}
+
+.profile-info .info-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-socials li {
+    background-color: var(--surface-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.info-socials li i {
+    font-size: 20px;
+    margin: 8px;
+}
+
+.cv-btn {
+    width: 250px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--panel-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+
+main {
+    width: 100%;
+
+    border-radius: var(--brd-radius);
+    background-color: var(--panel-color);
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-right: 16px;
 
 }
